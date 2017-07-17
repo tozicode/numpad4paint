@@ -60,8 +60,8 @@ Numpad6::
 
 ; ---- Get Color ----
 Numpad7::i                ;GetColorFromCanvas
-~Enter & Numpad7::j       ;GetColorFromLayer
-~NumpadEnter & Numpad7::j ;GetColorFromLayer
+~Enter & Numpad7::Send, j       ;GetColorFromLayer
+~NumpadEnter & Numpad7::Send, j ;GetColorFromLayer
 
 ; ---- Reverse ----
 NumpadAdd::Send, H
