@@ -1,4 +1,3 @@
-#UseHook
 #IfWinActive, SAI
 
 toolType := 0
@@ -21,18 +20,21 @@ Numpad0::Send, ^s ;Save
 
 ; ---- Undo / Redo ----
 Numpad1::Send, ^z                ;Undo
+~Enter & Numpad1::Send, ^y       ;Redo
 ~NumpadEnter & Numpad1::Send, ^y ;Redo
-~Enter & Numpad1::Send, ^y ;Redo
+~NumpadDot & Numpad1::Send, ^y   ;Redo
 
 ; ---- Zoom In/Out ----
 Numpad2::Send, z                 ;ZoomIn
-~NumpadEnter & Numpad2::Send, +z ;ZoomOut
 ~Enter & Numpad2::Send, +z       ;ZoomOut
+~NumpadEnter & Numpad2::Send, +z ;ZoomOut
+~NumpadDot & Numpad2::Send, +z   ;ZoomOut
 
 ; ---- Rotate Canvas ----
 Numpad3::Send, r
 ~Enter & Numpad3::Send, +r
 ~NumpadEnter & Numpad3::Send, +r
+~NumpadDot & Numpad3::Send, +r
 
 ; ---- Select Tool ----
 Numpad4::
@@ -59,9 +61,10 @@ Numpad6::
     Return
 
 ; ---- Get Color ----
-Numpad7::i                ;GetColorFromCanvas
+Numpad7::Send, i                ;GetColorFromCanvas
 ~Enter & Numpad7::Send, j       ;GetColorFromLayer
 ~NumpadEnter & Numpad7::Send, j ;GetColorFromLayer
+~NumpadDot & Numpad7::Send, j   ;GetColorFromLayer
 
 ; ---- Reverse ----
 NumpadAdd::Send, H
